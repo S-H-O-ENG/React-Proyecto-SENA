@@ -1,0 +1,199 @@
+:root {
+    --oscuro-fondo: #0f0f12;
+    --oscuro-panel: #0d0d11;
+    --morado-principal: #5f1ed7;
+    --morado-suave: #6f42c1;
+    --blanco-suave: #f1f1f4;
+    --border-color: #22222b;
+    --sidebar-width: 260px;
+    --sidebar-collapsed-width: 75px;
+
+}
+
+body {
+    background: var(--oscuro-fondo);
+    color: var(--blanco-suave);
+    font-family: system-ui, -apple-system, sans-serif;
+    margin: 0;
+}
+
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--oscuro-panel);
+    border-right: 1px solid var(--border-color);
+    transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    padding: 15px 10px;
+    overflow-x: hidden;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 5px 10px;
+    white-space: nowrap;
+}
+
+img {
+    width: 60px;
+    height: 70px;
+}
+
+.btn-hamburger {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    min-width: 35px;
+    text-align: center;
+}
+
+.menu-title {
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    color: white;
+}
+
+.sidebar-divider {
+    border-top: 1px solid var(--morado-principal);
+    margin: 15px 0;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 14px;
+    color: var(--oscuro-fondo);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+    color: var(--blanco-suave);
+
+}
+
+.menu-item:hover,
+.menu-item.active {
+    background: var(--morado-principal);
+    color: white;
+}
+
+.menu-icon {
+    font-size: 18px;
+    min-width: 35px;
+    text-align: center;
+    display: inline-block;
+}
+
+.sidebar.collapsed {
+    width: var(--morado-principal);
+}
+
+.sidebar.collapsed .menu-title,
+.sidebar.collapsed .menu-text {
+    display: none !important;
+}
+
+.main-content {
+    margin-left: var(--sidebar-width);
+    padding: 30px;
+    transition: margin-left 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.main-content.expanded {
+    margin-left: var(--sidebar-collapsed-width);
+}
+
+.encabezado {
+    background: var(--oscuro-fondo);
+    border: 3px solid var(--morado-principal);
+    border-radius: 12px;
+}
+
+.card {
+    background: var(--oscuro-panel);
+    border: 2px solid var(--morado-suave);
+    border-radius: 12px;
+    color: white;
+}
+
+.tabla-contenedor {
+    width: 100%;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.table {
+    margin-bottom: 0;
+    width: 100% !important;
+}
+
+#tablaProveedores thead th {
+    background: #181824 !important;
+    color: white !important;
+    border-bottom: 3px solid var(--morado-principal) !important;
+    padding: 12px !important;
+}
+
+#tablaProveedores tbody td {
+    vertical-align: middle;
+    padding: 12px !important;
+    background-color: var(--morado-suave);
+    border-bottom: 4px solid var(--blanco-suave) !important;
+    color: var(--blanco-suave);
+}
+
+.btn-registrar {
+    background: var(--morado-principal);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+}
+
+.btn-registrar:hover {
+    background: #7333eb;
+    color: white;
+}
+
+.btn-editar {
+    background: #ffffff;
+    color: black;
+    border: none;
+}
+
+.btn-eliminar {
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+}
+
+.dataTables_wrapper input,
+.dataTables_wrapper select {
+    background: var(--morado-principal) !important;
+    color: white !important;
+    border: 2px solid var(--morado-suave) !important;
+    border-radius: 6px;
+}
+
+#formProveedor {
+    color: var(--morado-principal);
+}

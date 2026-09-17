@@ -6,6 +6,13 @@
       "email": "jefe@betancourt.com",
       "role": "admin",
       "password": "$2b$10$EXqHkb4jq1KWzG.UXYQyheD6Pwh2BqkvRg9Q3.tL35oEVEuXQQqq."
+    },
+    {
+      "id": "2",
+      "nombre": "Asistente Administrativo",
+      "email": "administrativo@betancourt.com",
+      "role": "administrativo",
+      "password": "$2b$10$vNUA9b.2dD2SI49LKbTJje4O/lL1c3fPs6L..bYYUwZ7QMRR7qUca"
     }
   ]
 }

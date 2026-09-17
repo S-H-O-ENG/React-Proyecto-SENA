@@ -3,7 +3,7 @@ import axios from 'axios';
 import bcrypt from 'bcryptjs';
 import Swal from 'sweetalert2';
 
-import Pedidos from './pages/Pedidos.jsx';
+import PanelJefe from './components/PanelJefe.jsx';
 import logo from './assets/logo.png';
 import supra from './assets/supra.png';
 import './App.css';
@@ -62,7 +62,7 @@ function App() {
 
       //redireccionamiento a paginas
       if (usuario.role === "admin") {
-        setVistaActual("Pedidos")
+        setVistaActual("PanelJefe")
       }
 
 
@@ -71,8 +71,8 @@ function App() {
       console.error(error);
     }
   };
-  if (vistaActual === "Pedidos") {
-    return <Pedidos />;
+  if (vistaActual === "PanelJefe") {
+    return <PanelJefe />;
   }
 
   return (
@@ -95,7 +95,6 @@ function App() {
             <ul className="navbar-nav ms-auto align-items-center">
               <li className="nav-item"><a className="nav-link" href="#Nosotros">Sobre Nosotros</a></li>
               <li className="nav-item"><a className="nav-link" href="#donde">Encuéntranos</a></li>
-              <li className="nav-item"><a className="nav-link" href="#nuestrosProductos">Productos</a></li>
               <li className="nav-item"><a className="nav-link btn-cita-nav" href="#agendacita">Agenda tu Cita</a></li>
 
               <li className="nav-item">

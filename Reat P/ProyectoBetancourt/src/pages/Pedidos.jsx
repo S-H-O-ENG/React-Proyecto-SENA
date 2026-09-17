@@ -1,30 +1,16 @@
 import { useState } from 'react';
+import NavbarJefe from '../components/NavbarJefe.jsx'
 import logo from '../assets/logo.png';
 import '../css/Pedidos.css';
 
 function Pedidos() {
-    //bootstrap numero repuestos
     const [rangeValue, setRangeValue] = useState(50);
-
-
-
-
 
     return (
         <>
 
-
-
             <div className="container">
-                <header className="topbar">
-                    <div>
-                        <p>Bienvenido</p>
-                    </div>
-                    <div className="inventario-info">
-                        <i className="fa-regular fa-user"></i>
-                        <span>Gestión de Pedidos</span>
-                    </div>
-                </header>
+
                 <div className="formulario">
                     <div className="input-group">
                         <span className="input-group-text">Nombres y apellidos</span>
@@ -88,6 +74,8 @@ function Pedidos() {
 
 
             </div>
+
+
         </>
     )
 }

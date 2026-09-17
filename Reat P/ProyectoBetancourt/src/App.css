@@ -187,7 +187,7 @@ body {
 }
 
 .carro-animado{
-    max-width: 420px;
+    max-width: 700px;
     height: auto;
     object-fit: contain;
     animation: moverAuto 2.0s ease-in-out infinite alternate;
