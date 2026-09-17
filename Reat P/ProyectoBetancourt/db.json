@@ -1,0 +1,63 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "nombre": "Jefe",
+      "email": "jefe@betancourt.com",
+      "role": "admin",
+      "password": "$2b$10$E5n1qxhLa/0sI5O8zAd.hOuuUTxDazvM9x1uXtdE/TYJiDmPcGdv2"
+    },
+    {
+      "id": "2",
+      "nombre": "Asistente Administrativo",
+      "email": "administrativo@betancourt.com",
+      "role": "administrativo",
+      "password": "$2b$10$alp9/n/l6DGDKN/p9dWWi.PSsYNmODJ/WJc4T56QvEovyy9mBGtDW"
+    },
+    {
+      "id": "3",
+      "nombre": "Auxiliar",
+      "email": "auxiliar@betancourt.com",
+      "role": "auxiliar",
+      "password": "$2b$10$A9DU54fINgVabAHdYe8Cg.XlaLzLzvTYt.64j/.giITVO9ySSy2uG"
+    }
+  ],
+  "clientes": [
+    {
+      "id": "1",
+      "cedula": "1001",
+      "nombre": "Ousmane",
+      "apellido": "Mosquito",
+      "telefono": "3124567890",
+      "correo": "mendy@gmail.com",
+      "tipoVehiculo": "Automóvil",
+      "placa": "MIG001",
+      "marca": "Mazda",
+      "modelo": "3",
+      "color": "Gris"
+    },
+    {
+      "cedula": "$2b$10$JuS34I/V.IDp5MsHuyw22OSqqrYSlfG84vcKO0OtTo/CbU8ozxZje",
+      "nombre": "Carlos",
+      "apellido": "Espi",
+      "telefono": "3331112458",
+      "correo": "cespi09@gmail.com",
+      "tipoVehiculo": "Camioneta",
+      "placa": "CEP009",
+      "marca": "Renault",
+      "modelo": "2026",
+      "color": "Negro ",
+      "id": "8jS1SeuO7YQ"
+    }
+  ],
+  "productos":[
+    {
+
+    }
+  ],
+  "Pedidos":[
+    {
+      
+    }
+  ]
+}

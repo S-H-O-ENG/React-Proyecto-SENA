@@ -3,10 +3,11 @@ import logoImg from '../assets/logo.png';
 import '../css/Inventario.css';
 
 function Inventario() {
-
     const [productos, setProductos] = useState([]);
     const [formData, setFormData] = useState({
-
+        id: "",
+        nombre: "",
+        cantidad: ""
     });
 
     const handleChange = (e) => {
@@ -21,7 +22,6 @@ function Inventario() {
 
         const cantidadNum = parseInt(formData.cantidad, 10) || 0;
 
-
         let estado = "Activo";
         let claseBadge = "bg-success";
 
@@ -33,159 +33,189 @@ function Inventario() {
             claseBadge = "bg-warning text-dark";
         }
 
-
+        // Se crea el objeto antes de guardarlo
+        const nuevoProducto = {
+            id: formData.id || Date.now(),
+            nombre: formData.nombre,
+            cantidad: cantidadNum,
+            estado,
+            claseBadge
+        };
 
         setProductos([...productos, nuevoProducto]);
 
+        // Limpiar formulario
+        setFormData({ id: "", nombre: "", cantidad: "" });
 
-
-        const modalElement = document.getElementById("modalProducto");
-        if (modalElement && window.bootstrap) {
-            const modalInstance = window.bootstrap.Modal.getInstance(modalElement);
-            if (modalInstance) modalInstance.hide();
+        // Cerrar Modal vía JS nativo sin romper React
+        const botonCerrar = document.querySelector("#modalProducto .btn-close");
+        if (botonCerrar) {
+            botonCerrar.click();
         }
     };
 
+    // Cálculos dinámicos para las tarjetas
+    const activos = productos.filter((p) => p.estado === "Activo").length;
+    const bajoStock = productos.filter((p) => p.estado === "Bajo Stock").length;
+    const sinStock = productos.filter((p) => p.estado === "Sin Stock").length;
+
     return (
-        <>
+        <div className="dashboard-layout">
+            <aside className="sidebar offcanvas offcanvas-start show" tabIndex="-1" id="sidebarMenu">
+                <div className="sidebar-logo">
+                    <img src={logoImg} alt="Logo Taller De Betancourt" />
+                    <h2>Taller De Betancourt</h2>
+                    <p>Gestión De Inventarios</p>
+                </div>
+                <nav className="sidebar-menu">
+                    {/* Navegación mediante props de React sin recargar la página */}
+                    <button onClick={() => setVistaActual && setVistaActual('proveedores')} className="btn text-start text-white w-100">
+                        <i className="fa-solid fa-truck"></i> Proveedores
+                    </button>
+                    <button onClick={() => setVistaActual && setVistaActual('clientes')} className="btn text-start text-white w-100">
+                        <i className="fa-regular fa-user"></i> Clientes
+                    </button>
+                    <button onClick={() => setVistaActual && setVistaActual('pedidos')} className="btn text-start text-white w-100">
+                        <i className="fa-solid fa-clipboard-list"></i> Pedidos
+                    </button>
+                </nav>
+            </aside>
 
-            <div className="dashboard-layout">
-                <aside className="sidebar offcanvas offcanvas-start show" tabIndex="-1" id="sidebarMenu">
-                    <div className="sidebar-logo">
-                        <img src={logoImg} alt="Logo Taller De Betancourt" />
-                        <h2>Taller De Betancourt</h2>
-                        <p>Gestión De Inventarios</p>
+            <main className="dashboard-main">
+                <header className="topbar">
+                    <div>
+                        <p>Bienvenido</p>
                     </div>
-                    <nav className="sidebar-menu">
-                        <a href="/pages/proveedores.html">
-                            <i className="fa-solid fa-truck"></i> Proveedores
-                        </a>
-                        <a href="/pages/Gestion_Clientes.html">
-                            <i className="fa-regular fa-user"></i> Clientes
-                        </a>
-                        <a href="/pages/pedidos.html">
-                            <i className="fa-solid fa-semibold fa-clipboard-list"></i> Pedidos
-                        </a>
-                        <a href="../index.html">
-                            <i className="fa-solid fa-arrow-right-from-bracket"></i> Salir
-                        </a>
-                    </nav>
-                </aside>
+                    <div className="inventario-info">
+                        <i className="fa-solid fa-boxes-stacked"></i>
+                        <span>Gestión Inventario</span>
+                    </div>
+                </header>
 
-                <main className="dashboard-main">
-                    <header className="topbar">
-                        <div>
-                            <p>Bienvenido</p>
-                        </div>
-                        <div className="inventario-info">
-                            <i className="fa-solid fa-boxes-stacked"></i>
-                            <span>Gestión Inventario</span>
-                        </div>
-                    </header>
-
-                    <section className="row g-4 mb-4">
-                        <div className="col-lg-4 col-md-4">
-                            <div className="card-resumen">
-                                <i className="fa-solid fa-check-to-slot"></i>
-                                <div>
-                                    <h3>8</h3>
-                                    <p>Productos activos</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="col-lg-4 col-md-4">
-                            <div className="card-resumen">
-                                <i className="fa-solid fa-triangle-exclamation"></i>
-                                <div>
-                                    <h3>4</h3>
-                                    <p>Productos Con bajo Stock</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="col-lg-4 col-md-4">
-                            <div className="card-resumen">
-                                <i className="fa-solid fa-ban"></i>
-                                <div>
-                                    <h3>2</h3>
-                                    <p>Productos Sin Stock</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <br />
-
-                    <section className="panel-table container-fluid">
-                        <div className="cabecera-tabla d-flex justify-content-between align-items-center mb-3">
+                <section className="row g-4 mb-4">
+                    <div className="col-lg-4 col-md-4">
+                        <div className="card-resumen">
+                            <i className="fa-solid fa-check-to-slot"></i>
                             <div>
-                                <span>Productos</span>
+                                <h3>{activos}</h3>
+                                <p>Productos activos</p>
                             </div>
-                            <button className="btn btn-inventario" data-bs-toggle="modal" data-bs-target="#modalProducto">
-                                <i className="fa-solid fa-plus"></i> Agregar
-                            </button>
                         </div>
-                    </section>
+                    </div>
 
-                    <br />
+                    <div className="col-lg-4 col-md-4">
+                        <div className="card-resumen">
+                            <i className="fa-solid fa-triangle-exclamation"></i>
+                            <div>
+                                <h3>{bajoStock}</h3>
+                                <p>Productos Con bajo Stock</p>
+                            </div>
+                        </div>
+                    </div>
 
-                    <div className="tabla-inventario">
-                        <table id="tablaProductos" className="table-aling-middle">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Nombre Producto</th>
-                                    <th>Cantidad</th>
-                                    <th>Estado</th>
-                                    <th>Solicitar</th>
+                    <div className="col-lg-4 col-md-4">
+                        <div className="card-resumen">
+                            <i className="fa-solid fa-ban"></i>
+                            <div>
+                                <h3>{sinStock}</h3>
+                                <p>Productos Sin Stock</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="panel-table container-fluid">
+                    <div className="cabecera-tabla d-flex justify-content-between align-items-center mb-3">
+                        <div>
+                            <span>Productos</span>
+                        </div>
+                        <button className="btn btn-inventario" data-bs-toggle="modal" data-bs-target="#modalProducto">
+                            <i className="fa-solid fa-plus"></i> Agregar
+                        </button>
+                    </div>
+                </section>
+
+                <div className="tabla-inventario">
+                    <table id="tablaProductos" className="table align-middle">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre Producto</th>
+                                <th>Cantidad</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {productos.map((prod) => (
+                                <tr key={prod.id}>
+                                    <td>{prod.id}</td>
+                                    <td>{prod.nombre}</td>
+                                    <td>{prod.cantidad}</td>
+                                    <td>
+                                        <span className={`badge ${prod.claseBadge}`}>
+                                            {prod.estado}
+                                        </span>
+                                    </td>
                                 </tr>
-                            </thead>
-                            <tbody>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
 
-                            </tbody>
-                        </table>
-                    </div>
+                {/* Modal */}
+                <div className="modal fade" id="modalProducto" tabIndex="-1" aria-labelledby="modalProductoLabel" aria-hidden="true">
+                    <div className="modal-dialog modal-dialog-centered">
+                        <div className="modal-content modal-login text-bg-dark border-secondary">
+                            <div className="modal-header border-0">
+                                <h2 className="modal-title w-100 text-center" id="modalProductoLabel">
+                                    Nuevo Producto
+                                </h2>
+                                <button type="button" className="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div className="modal-body">
+                                <form id="formProducto" onSubmit={handleSubmit}>
+                                    <input
+                                        type="number"
+                                        name="id"
+                                        className="form-control mb-3"
+                                        placeholder="ID Producto"
+                                        value={formData.id}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                    <input
+                                        type="text"
+                                        name="nombre"
+                                        className="form-control mb-3"
+                                        placeholder="Nombre del Producto"
+                                        minLength={3}
+                                        maxLength={20}
+                                        value={formData.nombre}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                    <input
+                                        type="number"
+                                        name="cantidad"
+                                        className="form-control mb-3"
+                                        placeholder="Cantidad Inicial"
+                                        min="0"
+                                        value={formData.cantidad}
+                                        onChange={handleChange}
+                                        required
+                                    />
 
-
-                    <div className="modal fade" id="modalProducto" tabIndex="-1" aria-labelledby="modalProductoLabel" aria-hidden="true">
-                        <div className="modal-dialog modal-dialog-centered">
-                            <div className="modal-content modal-login">
-                                <div className="modal-header border-0">
-                                    <h2 className="modal-title w-100 text-center" id="modalProductoLabel">
-                                        Nuevo Producto
-                                    </h2>
-                                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div className="modal-body">
-                                    <form id="formProducto">
-                                        <input type="number" className="form-control mb-3" placeholder="ID Trabajador" required />
-                                        <input type="text" className="form-control mb-3" placeholder="Nombre" minLength={3} maxLength={20} required />
-                                        <input type="email" className="form-control mb-3" placeholder="Ingrese Su Usuario" required />
-
-                                        <input type="number" id="prodId" className="form-control mb-3" placeholder="ID Producto" required />
-                                        <input type="text" id="prodNombre" className="form-control mb-3" placeholder="Nombre del Producto" minLength={3} maxLength={20} required />
-                                        <input type="number" id="prodCantidad" className="form-control mb-3" placeholder="Cantidad Inicial" min="0" required />
-
-                                        <select defaultValue="" className="form-select mb-4" required>
-                                            <option value="" disabled>Seleccione su Cargo</option>
-                                            <option value="Jefe">Jefe De Taller</option>
-                                            <option value="Mecanico">Mecánico</option>
-                                            <option value="Asistente">Asistente General</option>
-                                            <option value="Auxiliar">Auxiliar Servicio Al Cliente</option>
-                                        </select>
-
-                                        <button type="submit" className="btn btn-guardar w-100">
-                                            Guardar Producto
-                                        </button>
-                                    </form>
-                                </div>
+                                    <button type="submit" className="btn btn-registrar w-100">
+                                        Guardar Producto
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
-                </main>
-            </div>
-        </>
+                </div>
+            </main>
+        </div>
     );
 }
+
 export default Inventario;

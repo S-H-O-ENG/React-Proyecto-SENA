@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import NavbarJefe from '../components/NavbarJefe.jsx'
-import logo from '../assets/logo.png';
 import '../css/Pedidos.css';
 
 function Pedidos() {
