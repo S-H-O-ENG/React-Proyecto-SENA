@@ -3,7 +3,10 @@ import fs from 'fs';
 
 
 const usuariosNativos = [
-  { id: "1", nombre: "Jefe", email: "jefe@betancourt.com", role: "admin", passwordPlana: "12345" }
+  { id: "1", nombre: "Jefe", email: "jefe@betancourt.com", role: "admin", passwordPlana: "12345" },
+  { id: "2", nombre: "Asistente Administrativo", email: "administrativo@betancourt.com", role: "administrativo", passwordPlana: "12345"},
+  { id: "3", nombre: "Auxiliar", email: "auxiliar@betancourt.com", role: "Auxiliar", passwordPlana: "12345" }
+  
 ];
 
 

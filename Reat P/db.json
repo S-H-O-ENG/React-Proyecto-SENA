@@ -5,14 +5,21 @@
       "nombre": "Jefe",
       "email": "jefe@betancourt.com",
       "role": "admin",
-      "password": "$2b$10$EXqHkb4jq1KWzG.UXYQyheD6Pwh2BqkvRg9Q3.tL35oEVEuXQQqq."
+      "password": "$2b$10$E5n1qxhLa/0sI5O8zAd.hOuuUTxDazvM9x1uXtdE/TYJiDmPcGdv2"
     },
     {
       "id": "2",
       "nombre": "Asistente Administrativo",
       "email": "administrativo@betancourt.com",
       "role": "administrativo",
-      "password": "$2b$10$vNUA9b.2dD2SI49LKbTJje4O/lL1c3fPs6L..bYYUwZ7QMRR7qUca"
+      "password": "$2b$10$alp9/n/l6DGDKN/p9dWWi.PSsYNmODJ/WJc4T56QvEovyy9mBGtDW"
+    },
+    {
+      "id": "3",
+      "nombre": "Auxiliar",
+      "email": "auxiliar@betancourt.com",
+      "role": "Auxiliar",
+      "password": "$2b$10$A9DU54fINgVabAHdYe8Cg.XlaLzLzvTYt.64j/.giITVO9ySSy2uG"
     }
   ]
 }

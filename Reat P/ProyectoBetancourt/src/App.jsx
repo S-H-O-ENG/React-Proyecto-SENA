@@ -61,6 +61,8 @@ function App() {
       document.body.style.paddingRight = '';
 
       //redireccionamiento a paginas
+      //si el rol del usuario es igual a admin entonces la variable set vista asignele paneljefe que es igual a la pagina
+      //pq arriba se importo
       if (usuario.role === "admin") {
         setVistaActual("PanelJefe")
       }
@@ -71,6 +73,7 @@ function App() {
       console.error(error);
     }
   };
+  //si la vista actual = anel jefe retorne panel jefe, para q se muestre xd
   if (vistaActual === "PanelJefe") {
     return <PanelJefe />;
   }
