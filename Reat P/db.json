@@ -1,0 +1,11 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "nombre": "Jefe",
+      "email": "jefe@betancourt.com",
+      "role": "admin",
+      "password": "$2b$10$EXqHkb4jq1KWzG.UXYQyheD6Pwh2BqkvRg9Q3.tL35oEVEuXQQqq."
+    }
+  ]
+}

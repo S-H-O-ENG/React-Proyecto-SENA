@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400;700&display=swap");
+:root {
+    --oscuro-fondo: #0f0f12;
+    --morado-principal: #5f1ed7;
+    --morado-clarito: #6f42c1;
+    --blanco-suave: #f1f1f4;
+    --gris-texto: #a3a3b8;
+    --fuente-titulos: 'Bebas Neue', sans-serif;
+    --fuente-textos: 'Lato', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--oscuro-fondo);
+    background: linear-gradient(135deg, #0f0f12 0%, #1a122c 50%, #251244 100%);
+    font-family: var(--fuente-textos);
+    color: var(--blanco-suave);
+    background-attachment: fixed;
+    line-height: 1.6;
+}
+
+.header-principal {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    background: rgba(15, 15, 18, 0.75) !important; 
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(111, 66, 193, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.header-principal .btn-cita-nav {
+    padding: 8px 20px !important;
+    border-radius: 25px;
+    font-weight: 700 !important;
+    color: white !important;
+    white-space: nowrap; 
+    box-shadow: 0 4px 10px rgba(95, 30, 215, 0.3);
+}
+
+.container-header {
+    width: 100%;
+}
+
+.logo-marca-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-header {
+    height: 45px;
+    object-fit: contain;
+    filter: drop-shadow(0px 2px 8px rgba(95, 30, 215, 0.3)); 
+}
+
+.marca {
+    font-family: var(--fuente-titulos);
+    font-size: 36px;
+    letter-spacing: 2px;
+    background: linear-gradient(to right, #ffffff, var(--morado-clarito));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.navegar .navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px; 
+}
+
+.navegar .nav-link {
+    color: var(--blanco-suave) !important;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: 0.3s ease;
+    position: relative;
+    padding: 5px 0 !important;
+}
+
+.navegar .nav-link:not(.btn-cita-nav)::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: var(--morado-clarito);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: 0.3s;
+}
+
+.navegar .nav-link:not(.btn-cita-nav):hover::after {
+    width: 100%;
+}
+
+
+.header-principal .btn-cita-nav {
+    background-color: var(--morado-principal);
+    padding: 8px 20px !important;
+    border-radius: 25px;
+    font-weight: 700 !important;
+    color: white !important;
+    box-shadow: 0 4px 10px rgba(95, 30, 215, 0.3);
+}
+
+.header-principal .btn-cita-nav:hover {
+    background-color: var(--morado-clarito);
+    box-shadow: 0 0 15px rgba(111, 66, 193, 0.6);
+}
+
+.btn-login-nav{
+    background-color: var(--morado-principal);
+    padding: 8px 20px !important;
+    border-radius: 25px;
+    font-weight: 700 !important;
+    color: white !important;
+    box-shadow: 0 4px 10px rgba(95, 30, 215, 0.3);
+}
+
+.custom-toggler.navbar-toggler {
+    border-color: rgba(111, 66, 193, 0.4);
+    padding: 6px 10px;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(241, 241, 244, 0.95)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.banner-taller {
+    min-height: 450px; 
+    background: linear-gradient(rgba(15, 15, 18, 0.5), rgba(15, 15, 18, 0.85)), url("../img/banner.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 60px 20px 40px 20px;
+    border-bottom: 2px solid var(--morado-principal);
+    gap: 15px; 
+}
+
+.banner-taller h1 {
+    font-family: var(--fuente-titulos);
+    font-size: 55px;
+    letter-spacing: 3px;
+    color: white;
+    text-shadow: 0 0 15px rgba(95, 30, 215, 0.6);
+    margin-top: 10px;
+}
+
+.banner-taller p {
+    font-size: 20px;
+    color: var(--gris-texto);
+}
+
+.seccion-contenedor {
+    padding: 35px;
+    background: rgba(24, 24, 31, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.seccion-contenedor h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 40px;
+    color: var(--morado-clarito);
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.col-texto h3 {
+    font-family: var(--fuente-titulos);
+    font-size: 28px;
+    margin-top: 20px;
+    color: var(--blanco-suave);
+}
+
+.resaltado-telefono b {
+    color: var(--morado-clarito);
+    font-size: 22px;
+}
+
+.carro-animado{
+    max-width: 420px;
+    height: auto;
+    object-fit: contain;
+    animation: moverAuto 2.0s ease-in-out infinite alternate;
+}
+
+@keyframes moverAuto {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-40px); }
+}
+
+.form-control, .form-select {
+    padding: 11px 14px !important;
+    background-color: #0f0f12 !important;
+    border: 1px solid #262633 !important;
+    border-radius: 6px !important;
+    color: white !important;
+    font-size: 15px !important;
+    transition: 0.3s !important;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--morado-clarito) !important;
+    box-shadow: 0 0 8px rgba(111, 66, 193, 0.4) !important;
+    outline: none !important;
+}
+
+footer {
+    background-color: #09090b;
+    padding: 30px;
+    text-align: center;
+    border-top: 1px solid rgba(111, 66, 193, 0.2);
+    margin-top: 60px;
+}
+
+.footer-contenido p {
+    color: var(--gris-texto);
+    font-size: 15px;
+}
+
+.footer-contenido .ficha {
+    font-size: 13px;
+    margin-top: 5px;
+    color: var(--morado-clarito);
+}
+
+
+@media (max-width: 768px) {
+    .banner-taller h1 { font-size: 38px; }
+    .seccion-contenedor { padding: 20px; }
+    
+    .navegar ul {
+        padding-top: 15px;
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+.modal-login{
+    background-image: url('./assets/log.jpg');
+    background-position: center;
+    background-size: cover;
+    color: white;
+}
+
+
+.modal-login ::placeholder{
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.modal-login button{
+    background-color: #ff005577;
+}
+
+.link-login{
+    color: #FF007F;
+}
+
+.btn-enviarS{
+    background-color: #5f1ed7;
+    color: #F1EAFF;
+}
