@@ -20,22 +20,18 @@
       "email": "auxiliar@betancourt.com",
       "role": "auxiliar",
       "password": "$2b$10$A9DU54fINgVabAHdYe8Cg.XlaLzLzvTYt.64j/.giITVO9ySSy2uG"
-    }
+    },
+    [
+      {
+        "id": "6",
+        "nombre": "test",
+        "email": "test@betancourt.com",
+        "role": "test",
+        "password": "123456"
+      }
+    ]
   ],
   "clientes": [
-    {
-      "id": "1",
-      "cedula": "1001",
-      "nombre": "Ousmane",
-      "apellido": "Mosquito",
-      "telefono": "3124567890",
-      "correo": "mendy@gmail.com",
-      "tipoVehiculo": "Automóvil",
-      "placa": "MIG001",
-      "marca": "Mazda",
-      "modelo": "3",
-      "color": "Gris"
-    },
     {
       "cedula": "$2b$10$JuS34I/V.IDp5MsHuyw22OSqqrYSlfG84vcKO0OtTo/CbU8ozxZje",
       "nombre": "Carlos",
@@ -48,7 +44,16 @@
       "modelo": "2026",
       "color": "Negro ",
       "id": "8jS1SeuO7YQ"
-    }
+    },
+    [
+      {
+        "id": "7",
+        "nombre": "Aceite Sintético 10W",
+        "cantidad": 1,
+        "estado": "Bajo Stock",
+        "claseBadge": "bg-warning text-dark"
+      }
+    ]
   ],
   "productos": [
     {
@@ -78,7 +83,30 @@
       "cantidad": 88,
       "estado": "Activo",
       "claseBadge": "bg-success"
-    }
+    },
+    {
+      "id": "5",
+      "nombre": "Bujia de Motor",
+      "cantidad": 40,
+      "estado": "Activo",
+      "claseBadge": "bg-success"
+    },
+    {
+      "id": "6",
+      "nombre": "Test",
+      "cantidad": 12,
+      "estado": "Activo",
+      "claseBadge": "bg-success"
+    },
+    [
+      {
+        "id": "6",
+        "nombre": "test",
+        "email": "test@betancourt.com",
+        "role": "test",
+        "password": "123456"
+      }
+    ]
   ],
   "Pedidos": [
     {}
