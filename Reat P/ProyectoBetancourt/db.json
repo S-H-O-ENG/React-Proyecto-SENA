@@ -1,61 +1,28 @@
 {
-  "usuarios": [
+  "users": [
     {
-      "id": "1",
-      "nombre": "Jefe",
-      "email": "jefe@betancourt.com",
+      "email": "jefe@betancorut.com",
+      "password": "$2a$10$Fe8zKxVg9LNKYrFyyQg1NuSZ2deKStg3bHn2u5YSkeiUrubgWT8re",
+      "name": "Jefe",
       "role": "admin",
-      "password": "$2b$10$E5n1qxhLa/0sI5O8zAd.hOuuUTxDazvM9x1uXtdE/TYJiDmPcGdv2"
+      "id": "1"
     },
     {
-      "id": "2",
-      "nombre": "Asistente Administrativo",
-      "email": "administrativo@betancourt.com",
+      "email": "administrativo@betancorut.com",
+      "password": "$2a$10$kfqyreisbFXuF2Ip1a6AEOX82.Smk8b7rN5k0ccIrC62p2rrxYKsG",
+      "name": "Asistente Administrativo",
       "role": "administrativo",
-      "password": "$2b$10$alp9/n/l6DGDKN/p9dWWi.PSsYNmODJ/WJc4T56QvEovyy9mBGtDW"
+      "id": "2"
     },
     {
-      "id": "3",
-      "nombre": "Auxiliar",
-      "email": "auxiliar@betancourt.com",
-      "role": "auxiliar",
-      "password": "$2b$10$A9DU54fINgVabAHdYe8Cg.XlaLzLzvTYt.64j/.giITVO9ySSy2uG"
-    },
-    [
-      {
-        "id": "6",
-        "nombre": "test",
-        "email": "test@betancourt.com",
-        "role": "test",
-        "password": "123456"
-      }
-    ]
+      "email": "auxiliar@betancorut.com",
+      "password": "$2a$10$L1kkvcRCA73oHwiRcTTLM.PgO1wgVi/aPTLQesr7EK6if9A0XNW4G",
+      "name": "Auxiliar De Datos",
+      "role": "auxdatos",
+      "id": "3"
+    }
   ],
-  "clientes": [
-    {
-      "cedula": "$2b$10$JuS34I/V.IDp5MsHuyw22OSqqrYSlfG84vcKO0OtTo/CbU8ozxZje",
-      "nombre": "Carlos",
-      "apellido": "Espi",
-      "telefono": "3331112458",
-      "correo": "cespi09@gmail.com",
-      "tipoVehiculo": "Camioneta",
-      "placa": "CEP009",
-      "marca": "Renault",
-      "modelo": "2026",
-      "color": "Negro ",
-      "id": "8jS1SeuO7YQ"
-    },
-    [
-      {
-        "id": "7",
-        "nombre": "Aceite Sintético 10W",
-        "cantidad": 1,
-        "estado": "Bajo Stock",
-        "claseBadge": "bg-warning text-dark"
-      }
-    ]
-  ],
-  "productos": [
+  "inventario": [
     {
       "id": "1",
       "nombre": "Aceite Sintético 10W",
@@ -97,18 +64,9 @@
       "cantidad": 12,
       "estado": "Activo",
       "claseBadge": "bg-success"
-    },
-    [
-      {
-        "id": "6",
-        "nombre": "test",
-        "email": "test@betancourt.com",
-        "role": "test",
-        "password": "123456"
-      }
-    ]
+    }
   ],
-  "Pedidos": [
-    {}
+  "pedidos": [
+    
   ]
 }

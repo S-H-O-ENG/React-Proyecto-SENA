@@ -17,6 +17,7 @@
     "json-server-auth": "^2.1.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
+    "react-router-dom": "^7.18.4",
     "swal": "^0.1.0",
     "sweetalert2": "^11.26.25"
   },

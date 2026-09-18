@@ -3,7 +3,6 @@ import axios from 'axios';
 import bcrypt from 'bcryptjs';
 import Swal from 'sweetalert2';
 
-import PanelJefe from './components/PanelJefe.jsx';
 import Inventario from './pages/Inventario.jsx';
 import GestionClientes from './pages/GestionClientes.jsx';
 import logo from './assets/logo.png';
