@@ -21,7 +21,7 @@ const EstadoInicialForm = {
     color: ''
 };
 
-function GestionClientes() {
+function GestionClientes({ alSalir }) {
     const [clientes, setClientes] = useState([]);
     const [formData, setFormData] = useState(EstadoInicialForm);
     const [mostrarModal, setMostrarModal] = useState(false);

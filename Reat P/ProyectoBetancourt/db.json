@@ -50,14 +50,37 @@
       "id": "8jS1SeuO7YQ"
     }
   ],
-  "productos":[
+  "productos": [
     {
-
+      "id": "1",
+      "nombre": "Aceite Sintético 10W",
+      "cantidad": 1,
+      "estado": "Bajo Stock",
+      "claseBadge": "bg-warning text-dark"
+    },
+    {
+      "id": "2",
+      "nombre": "Filtro de Aceite",
+      "cantidad": 100,
+      "estado": "Activo",
+      "claseBadge": "bg-success"
+    },
+    {
+      "id": "3",
+      "nombre": "Filtro de Aire",
+      "cantidad": 80,
+      "estado": "Activo",
+      "claseBadge": "bg-success"
+    },
+    {
+      "id": "46",
+      "nombre": "gfdhd",
+      "cantidad": 88,
+      "estado": "Activo",
+      "claseBadge": "bg-success"
     }
   ],
-  "Pedidos":[
-    {
-      
-    }
+  "Pedidos": [
+    {}
   ]
 }

@@ -85,10 +85,12 @@ function App() {
   //si la vista actual = anel jefe retorne panel jefe, para q se muestre xd
   if (vistaActual === "PanelJefe") {
     return <PanelJefe />;
-  } else if (vistaActual === "Inventario") {
+  } 
+  if (vistaActual === "Inventario") {
     return <Inventario />
-  } else if (vistaActual === "Clientes") {
-    return <GestionClientes/>;
+  } 
+  if (vistaActual === "Clientes") {
+    return <GestionClientes alSalir= {() => setVistaActual ("App.jsx")}/>;
   }
 
     return (

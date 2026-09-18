@@ -260,7 +260,7 @@ table {
 .btn-inventario {
     width: 250px;
     font-size: 30px;
-    background-color: var(--morado-principal);
+    background-color: transparent;
     color: var(--blanco-suave);
     border-radius: 10px;
     font-weight: 300vh;
@@ -299,6 +299,7 @@ table {
     width: 25%;
     background-color: #14141a;
     padding: 10px;
+    color: white;
 }
 
 .tabla-inventario th {

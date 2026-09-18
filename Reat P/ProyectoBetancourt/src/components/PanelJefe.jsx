@@ -2,7 +2,8 @@
 import { useState } from 'react';
 import NavbarJefe from '../components/NavbarJefe.jsx';
 import Pedidos from '../pages/Pedidos.jsx';
-import Proveedores from '../pages/Proveedores.jsx';
+
+
 
 function PanelJefe() {
     const [subVista, setSubVista] = useState('Pedidos');
